@@ -16,7 +16,7 @@ class ChatProvider with ChangeNotifier {
 
   Future<void> sendMessageAndGetAnswers(
       {required String msg, required String chosenModelId}) async {
-    if (chosenModelId.toLowerCase().startsWith("gpt")) {
+    if (chosenModelId.toLowerCase().startsWith("gpt") || chosenModelId.toLowerCase().contains("deepseek-ai")) {
       chatList.addAll(await ApiService.sendMessageGPT(
         message: msg,
         modelId: chosenModelId,
