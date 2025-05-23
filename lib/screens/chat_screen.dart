@@ -44,8 +44,8 @@ class _ChatScreenState extends State<ChatScreen> {
   // List<ChatModel> chatList = [];
   @override
   Widget build(BuildContext context) {
-    final modelsProvider = Provider.of<ModelsProvider>(context);
-    final chatProvider = Provider.of<ChatProvider>(context);
+    final modelsProvider = context.watch<ModelsProvider>();
+    final chatProvider = context.watch<ChatProvider>();
     return Scaffold(
       appBar: AppBar(
         elevation: 2,

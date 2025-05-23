@@ -20,7 +20,7 @@ class _ModelsDrowDownWidgetState extends State<ModelsDrowDownWidget> {
   bool isFirstLoading = true;
   @override
   Widget build(BuildContext context) {
-    final modelsProvider = Provider.of<ModelsProvider>(context, listen: false);
+    final modelsProvider = context.read<ModelsProvider>();
     currentModel = modelsProvider.getCurrentModel;
     return FutureBuilder<List<ModelsModel>>(
         future: modelsProvider.getAllModels(),
